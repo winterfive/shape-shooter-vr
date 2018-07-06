@@ -5,13 +5,35 @@ public class ShapeManager : MonoBehaviour
     public GameObject[] Shapes;
     public Transform[] SpawnPoints;
     public float spawnTime;
+<<<<<<< HEAD
+    public RaycastManager raycastManager;
+    //public Material cubeNormal;
+    //public Material cubeOver;
+    //public Material sphereNormal;
+    //public Material sphereOver;
+
+    private GameObject managers;
+    private GameObject _objectFound;
+    private bool _ifShootable;
+=======
 
     private float startTime = 2.0f;
+>>>>>>> master
 
     //  Use this for initialization
     void Start()
     {
+<<<<<<< HEAD
+        InvokeRepeating("SpawnShapes", spawnTime, spawnTime);
+        _ifShootable = false;
+	}
+
+    private void Update()
+    {
+        
+=======
         InvokeRepeating("SpawnShapes", startTime, spawnTime);
+>>>>>>> master
     }
 
     //  Spawns random shape at random spawnpoint
@@ -34,6 +56,13 @@ public class ShapeManager : MonoBehaviour
             Instantiate(shape, SpawnPoints[spawnPointIndex].position, Quaternion.Euler(Random.Range(-90, 90), Random.Range(-40, 40), Random.Range(-40, 40)));
         }
     }
+ 
+    // TODO Get the object from Raycaster if event is called
+    // TODO If the current object is shootable, change it's color back to normal
+    // TODO Change the new object's color to onGaze if it's shootable
+    // TODO Store the ne wobjecy as the current object
+    // TODO ShapeManager checks for shootable
+
 
     //  Spawns explosion and destroys shape object
     //  GameObject -> void
@@ -43,4 +72,34 @@ public class ShapeManager : MonoBehaviour
         Destroy(foundObject);
         //Debug.Log("Destroyed object: " + foundObject.name);
     }
+<<<<<<< HEAD
+
+
+    // Checks object found for "Shootable" tag, updates bool ifShootable
+    // void -> void
+    public void CheckForShootable()
+    {
+        if (_objectFound.tag == "Shootable")
+        {
+            _ifShootable = true;
+        }
+        else
+        {
+            _ifShootable = false;
+        }
+    }
+
+
+    // Changes object's material to onGaze material
+    // GameObject -> void
+    public void ChangeShapeColor(GameObject foundObject)
+    {
+        GameObject objectAlreadyFound = foundObject;
+
+        // TODO Break this into 2 methods: enable, disable
+
+    }
 }
+=======
+}
+>>>>>>> master

@@ -1023,6 +1023,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1213041244}
+<<<<<<< HEAD
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93b87886eb92ce543995fc917d3aa42b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 100
+=======
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffebc012055484b4899e163803755608, type: 3}
@@ -1038,6 +1046,7 @@ MonoBehaviour:
   _debugRayLength: 5
   _debugRayDuration: 1
   _rayLength: 500
+>>>>>>> master
 --- !u!224 &1213041248
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1278,6 +1287,13 @@ MonoBehaviour:
   - {fileID: 741158106}
   - {fileID: 1327769901}
   spawnTime: 0.25
+<<<<<<< HEAD
+  colorAdd: 0
+  raycastManager: {fileID: 0}
+  sphereNormal: {fileID: 0}
+  sphereOver: {fileID: 0}
+=======
+>>>>>>> master
 --- !u!4 &1934252587
 Transform:
   m_ObjectHideFlags: 0
@@ -1299,6 +1315,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1934252585}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
+  m_Script: {fileID: 11500000, guid: cf98bfcb609e52d4fb99b7e211c565e5, type: 3}
+=======
   m_Script: {fileID: 11500000, guid: 8902ef04f323e444b98d2e4fd80a56ab, type: 3}
+>>>>>>> master
   m_Name: 
   m_EditorClassIdentifier: 
