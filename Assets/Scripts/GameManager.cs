@@ -21,16 +21,14 @@ public class GameManager : MonoBehaviour{
 
         if (_timer >= timeBetweenShots && Input.GetButton("Fire1"))
         {
-            //Shoot();
+            Shoot();
         }
     }
 
     //  Destroys object
     //  void -> void
-    //public void Shoot()
-    //{
-    //    _currentfoundobject = raycastmanager._currentfoundobject;
-    //    shapemanager.destroyshape(_currentfoundobject);
-    //    debug.log("shot an object: " + _currentfoundobject.name);
-    //}
+    public void Shoot()
+    {
+        shapeManager.DestroyShape();
+    }
 }

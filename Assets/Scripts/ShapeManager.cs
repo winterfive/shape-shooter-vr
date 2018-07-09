@@ -11,6 +11,7 @@ public class ShapeManager : MonoBehaviour
     public Material cubeOver;
     public Material sphereNormal;
     public Material sphereOver;
+    public GameObject explosion;
 
     private GameObject _currentFoundObject;
     private GameObject _previousFoundObject;
@@ -21,6 +22,7 @@ public class ShapeManager : MonoBehaviour
     {
         InvokeRepeating("SpawnShapes", spawnTime, spawnTime);
 	}
+
 
     //  Spawns random shape at random spawnpoint
     //  void -> void
@@ -46,32 +48,43 @@ public class ShapeManager : MonoBehaviour
 
     //  Spawns explosion and destroys shape object
     //  GameObject -> void
-    public void DestroyShape(GameObject foundObject)
+    public void DestroyShape()
     {
-        // TODO Instantiate(explosion, foundObject.transform.position, foundObject.transform.rotation);
-        Destroy(foundObject);
-        //Debug.Log("Destroyed object: " + foundObject.name);
+        if(_currentFoundObject != null)
+        {
+            Instantiate(explosion, _currentFoundObject.transform.position, _currentFoundObject.transform.rotation);
+            Destroy(_currentFoundObject);
+        }        
     }
 
 
-    // Checks objects found for "Shootable" tag
+    // Checks found object for "Shootable" tag
     // void -> void
     public void CheckForShootable()
     {
-        _currentFoundObject = raycastManager.GetCurrentFoundObject();
+        GameObject newObject, oldObject;
 
-        if (_currentFoundObject.tag == "Shootable")
+        if (raycastManager.GetCurrentFoundObject() != null)
         {
-            ChangeShapeColor(_currentFoundObject);
-            // Works up to here
+            newObject = raycastManager.GetCurrentFoundObject();
+            
+            if (newObject.tag == "Shootable")
+            {
+                _currentFoundObject = newObject;
+                ChangeShapeColor(_currentFoundObject);
+            }
         }
 
-        _previousFoundObject = raycastManager.GetPreviousFoundObject();
-
-        if(_previousFoundObject.tag == "Shootable")
+        if (raycastManager.GetPreviousFoundObject() != null)
         {
-            RevertShapeColor(_previousFoundObject);
-        }
+            oldObject = raycastManager.GetPreviousFoundObject();
+
+            if (oldObject.tag == "Shootable")
+            {
+                _previousFoundObject = oldObject;
+                RevertShapeColor(_previousFoundObject);
+            }
+        }       
     }
 
 
@@ -79,12 +92,12 @@ public class ShapeManager : MonoBehaviour
     // gameObject -> void
     public void ChangeShapeColor(GameObject go)
     {
-        if(go.name == "Sphere")
+        if(go.name == "Sphere(Clone)")
         {
             go.GetComponent<Renderer>().material = sphereOver;
         }
 
-        if (go.name == "Cube")
+        if (go.name == "Cube(Clone)")
         {
             go.GetComponent<Renderer>().material = cubeOver;
         }
@@ -95,12 +108,12 @@ public class ShapeManager : MonoBehaviour
     // gameObject -> void
     public void RevertShapeColor(GameObject go)
     {
-        if (go.name == "Sphere")
+        if (go.name == "Sphere(Clone)")
         {
             go.GetComponent<Renderer>().material = sphereNormal;
         }
 
-        if (go.name == "Cube")
+        if (go.name == "Cube(Clone)")
         {
             go.GetComponent<Renderer>().material = cubeNormal;
         }
