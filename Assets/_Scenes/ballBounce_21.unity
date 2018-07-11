@@ -1185,19 +1185,28 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4050884203376040, guid: 736fe4f8249ce9545ad8a43854532526, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4050884203376040, guid: 736fe4f8249ce9545ad8a43854532526, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4050884203376040, guid: 736fe4f8249ce9545ad8a43854532526, type: 2}
       propertyPath: m_LocalScale.z
-      value: 0.2
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1607893566742662, guid: 736fe4f8249ce9545ad8a43854532526, type: 2}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1607893566742662, guid: 736fe4f8249ce9545ad8a43854532526, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64708147404153458, guid: 736fe4f8249ce9545ad8a43854532526,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 736fe4f8249ce9545ad8a43854532526, type: 2}
@@ -1371,7 +1380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 1213041248}
-  _defaultDistance: 15
+  _defaultDistance: 2
   reticle: {fileID: 1604795078}
   raycastManager: {fileID: 1213041245}
 --- !u!114 &1934252589
