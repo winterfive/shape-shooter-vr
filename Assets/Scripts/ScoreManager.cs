@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
     public static int score;
     public Text scoreText;
 
-    int _shapePointValue = 10;    
+    private int _shapePointValue = 10;    
 
 
     void Start()
@@ -17,20 +17,19 @@ public class ScoreManager : MonoBehaviour
     }
 
 
-    void Update()
+    //  Adds points to score
+    //  void -> void
+    public void AddToScore()
     {
+        score += _shapePointValue;
         UpdateScore();
     }
 
 
-    public void AddToScore()
-    {
-        score += _shapePointValue;
-    }
-
-
+    //  Displays updated score
+    //  void -> void
     void UpdateScore()
     {
-        scoreText.text = "Score: " + score;
+        scoreText.text = score.ToString();
     }
 }
