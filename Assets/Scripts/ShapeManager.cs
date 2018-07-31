@@ -26,7 +26,7 @@ public class ShapeManager : MonoBehaviour
     void Start()
     {
         InvokeRepeating("SpawnShapes", spawnTime, spawnTime);
-	}
+    }
 
 
     //  Spawns random shape at random spawnpoint
@@ -45,7 +45,7 @@ public class ShapeManager : MonoBehaviour
     //  void -> void
     public void DestroyShape()
     {
-        if(_currentFoundObject != null && _currentFoundObject.tag == "Shootable")
+        if (_currentFoundObject != null && _currentFoundObject.tag == "Shootable")
         {
             Instantiate(explosion, _currentFoundObject.transform.position, _currentFoundObject.transform.rotation);
             _explosion_sound.Play();
@@ -65,7 +65,7 @@ public class ShapeManager : MonoBehaviour
         {
             newObject = raycastManager.GetCurrentFoundObject();
 
-            if(_currentFoundObject != newObject)
+            if (_currentFoundObject != newObject)
             {
                 _currentFoundObject = newObject;
 
@@ -93,7 +93,7 @@ public class ShapeManager : MonoBehaviour
     // gameObject -> void
     public void ChangeShapeColor(GameObject go)
     {
-        if(go.name == "Ball(Clone)")
+        if (go.name == "Ball(Clone)")
         {
             go.GetComponent<Renderer>().material = ballOver;
         }
