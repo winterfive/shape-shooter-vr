@@ -4,10 +4,11 @@ using UnityEngine.UI;
 
 public class ReticleManager : MonoBehaviour {    
     
-    public Transform _camera;
-    public float _defaultDistance = 2f;
+    public Transform camera;
+    public float defaultDistance = 2f;
     public GameObject reticle;
     public RaycastManager raycastManager;
+    
     private Transform _reticleTransform;
     private Vector3 _originalScale;
     private Quaternion _originalRotation;
@@ -30,10 +31,10 @@ public class ReticleManager : MonoBehaviour {
     public void SetPosition()
     {
         // Set the position of the reticle to the default distance in front of the camera.
-        _reticleTransform.position = _camera.position + _camera.forward * _defaultDistance;
+        _reticleTransform.position = camera.position + camera.forward * defaultDistance;
 
         // Set the scale based on the original and the distance from the camera.
-        _reticleTransform.localScale = _originalScale * _defaultDistance;
+        _reticleTransform.localScale = _originalScale * defaultDistance;
 
         // The rotation should just be the default.
         _reticleTransform.localRotation = _originalRotation;
